@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+  labels:
+    app: go-simple-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-simple-api
+  template:
+    metadata:
+      labels:
+        app: go-simple-api 
+    spec:
+      containers:
+      - name: go-simple-api
+        image: leon0408/go-simple-api:latest
+        ports:
+        - containerPort: 8080
