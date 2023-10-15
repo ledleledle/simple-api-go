@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment
+  name: depl-go-simple-api
   labels:
     app: go-simple-api
 spec:
@@ -17,5 +17,6 @@ spec:
       containers:
       - name: go-simple-api
         image: leon0408/go-simple-api:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 8080

@@ -29,7 +29,7 @@ pipeline {
         }
       }
     }
-    stage('Deploying React.js container to Kubernetes') {
+    stage('Deploying Go container to Kubernetes') {
       steps {
         sh('kubectl apply -f deployment.yaml')
         sh('kubectl apply -f service.yaml')
